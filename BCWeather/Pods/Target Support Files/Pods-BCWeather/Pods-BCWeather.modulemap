@@ -1,0 +1,6 @@
+framework module Pods_BCWeather {
+  umbrella header "Pods-BCWeather-umbrella.h"
+
+  export *
+  module * { export * }
+}
