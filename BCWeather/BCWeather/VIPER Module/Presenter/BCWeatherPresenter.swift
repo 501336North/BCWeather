@@ -1,5 +1,5 @@
 //
-//  BCWeatherMainPresenter.swift
+//  BCWeatherPresenter.swift
 //  BCWeather
 //
 //  Created by Yanick Lavoie on 2019-05-25.
@@ -8,10 +8,10 @@
 
 import UIKit
 
-class BCWeatherMainPresenter: BCWeatherMainPresenterProtocol {
+class BCWeatherPresenter: BCWeatherPresenterProtocol {
     weak var view: BCWeatherMainViewProtocol?
-    var interactor: BCWeatherMainInteractorInputProtocol?
-    var wireFrame: BCWeatherMainWireFrameProtocol?
+    var interactor: BCWeatherInteractorInputProtocol?
+    var wireFrame: BCWeatherRouteWireFrameProtocol?
 
     func viewDidLoad() {
         view?.showLoading()
@@ -19,9 +19,15 @@ class BCWeatherMainPresenter: BCWeatherMainPresenterProtocol {
         //TODO: ask for perms and translate loc to city to pass as param
         interactor?.retrieveWeather(for: "")
     }
+
+
+    func navigateToDetails(weather: OpenWeather, from classRef: UIViewController) {
+        wireFrame?.navigateToDetails(weather: weather, from: classRef)
+    }
+
 }
 
-extension BCWeatherMainPresenter: BCWeatherMainInteractorOutputProtocol {
+extension BCWeatherPresenter: BCWeatherInteractorOutputProtocol {
     /// callback function.  when we did retrieve Weather data
     /// - Parameters : Array of OpenWeather Objects
     func didRetrieveOpenWeather(_ openWeather: [OpenWeather]) {
@@ -37,4 +43,6 @@ extension BCWeatherMainPresenter: BCWeatherMainInteractorOutputProtocol {
 
 }
 
-
+class BCWeatherDetailPresenter: BCWeatherDetailPresenterProtocol {
+    weak var view: BCWeatherDetailViewProtocol?
+}
