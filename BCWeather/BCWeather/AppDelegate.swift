@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         if let appStartService = ServiceFactory.resolve(serviceType: AppStartupServiceProtocol.self) {
             appStartService.start {
-                let bcweatherMain = BCWeatherMainWireFrame.createBCWeatherMainModule()
+                let bcweatherMain = BCWeatherRouteWireFrame.createBCWeatherMainModule()
                 if let window = self.window {
                     window.rootViewController = bcweatherMain
                     window.makeKeyAndVisible()

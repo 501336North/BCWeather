@@ -1,5 +1,5 @@
 //
-//  BCWeatherMainInteractorOutputProtocol.swift
+//  BCWeatherDetailInteractorOutputProtocol.swift
 //  BCWeather
 //
 //  Created by Yanick Lavoie on 2019-05-25.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-protocol BCWeatherMainInteractorOutputProtocol: class {
+protocol BCWeatherDetailInteractorOutputProtocol: class {
     /// INTERACTOR -> PRESENTER
-    func didRetrieveOpenWeather(_ openWeather: [OpenWeather])
+    func didRetrieveOpenWeather(_ openWeather: OpenWeather)
     func onError()
 }
 

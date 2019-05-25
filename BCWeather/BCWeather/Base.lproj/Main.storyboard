@@ -66,5 +66,83 @@
             </objects>
             <point key="canvasLocation" x="324.63768115942031" y="2.6785714285714284"/>
         </scene>
+        <!--Weather Detail View Controller-->
+        <scene sceneID="onp-Ep-6CY">
+            <objects>
+                <viewController storyboardIdentifier="BCWeatherDetailView" id="BYb-Qe-N9K" customClass="BCWeatherDetailViewController" customModule="BCWeather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jp8-nt-eYx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WIND " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdp-Iy-Mgn">
+                                <rect key="frame" x="20" y="187" width="374" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="pkV-Zu-0Qh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JuB-xj-8tb">
+                                <rect key="frame" x="20" y="297" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CLOUD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xie-pt-7tS">
+                                <rect key="frame" x="20" y="393" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6k9-2I-osW">
+                                <rect key="frame" x="20" y="555" width="374" height="154"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="154" id="JOv-i7-IJ9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h3M-Ws-NDI">
+                                <rect key="frame" x="394" y="275" width="0.0" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="jQU-F7-i4F"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hdp-Iy-Mgn" firstAttribute="leading" secondItem="Jp8-nt-eYx" secondAttribute="leadingMargin" id="5mX-DP-E3Y"/>
+                            <constraint firstItem="hdp-Iy-Mgn" firstAttribute="top" secondItem="Jp8-nt-eYx" secondAttribute="top" constant="187" id="7bg-6c-MRK"/>
+                            <constraint firstItem="JuB-xj-8tb" firstAttribute="top" secondItem="hdp-Iy-Mgn" secondAttribute="bottom" constant="45" id="DAX-Jj-UTP"/>
+                            <constraint firstItem="xbC-M6-vZS" firstAttribute="bottom" secondItem="6k9-2I-osW" secondAttribute="bottom" constant="153" id="HGn-sc-ftx"/>
+                            <constraint firstItem="hdp-Iy-Mgn" firstAttribute="leading" secondItem="xie-pt-7tS" secondAttribute="leading" id="S5N-sO-oQk"/>
+                            <constraint firstItem="hdp-Iy-Mgn" firstAttribute="trailing" secondItem="xie-pt-7tS" secondAttribute="trailing" id="Zs4-yi-tvK"/>
+                            <constraint firstItem="hdp-Iy-Mgn" firstAttribute="leading" secondItem="JuB-xj-8tb" secondAttribute="leading" id="bcp-cl-YxL"/>
+                            <constraint firstItem="hdp-Iy-Mgn" firstAttribute="trailing" secondItem="6k9-2I-osW" secondAttribute="trailing" id="fIR-UH-VXK"/>
+                            <constraint firstItem="hdp-Iy-Mgn" firstAttribute="trailing" secondItem="h3M-Ws-NDI" secondAttribute="trailing" id="gNY-TT-fiR"/>
+                            <constraint firstItem="hdp-Iy-Mgn" firstAttribute="trailing" secondItem="Jp8-nt-eYx" secondAttribute="trailingMargin" id="lJH-JL-TLg"/>
+                            <constraint firstItem="h3M-Ws-NDI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JuB-xj-8tb" secondAttribute="trailing" constant="8" symbolic="YES" id="meK-pF-J9S"/>
+                            <constraint firstItem="h3M-Ws-NDI" firstAttribute="firstBaseline" secondItem="JuB-xj-8tb" secondAttribute="firstBaseline" constant="-22" id="rqV-YC-gC2"/>
+                            <constraint firstItem="hdp-Iy-Mgn" firstAttribute="leading" secondItem="6k9-2I-osW" secondAttribute="leading" id="xgP-gO-FNC"/>
+                            <constraint firstItem="xie-pt-7tS" firstAttribute="top" secondItem="h3M-Ws-NDI" secondAttribute="bottom" constant="53" id="zat-D4-iCm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xbC-M6-vZS"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="cloudCoveragePctgLabel" destination="6k9-2I-osW" id="aIM-Sp-uNy"/>
+                        <outlet property="windDirectionLabel" destination="h3M-Ws-NDI" id="DeR-PD-R8W"/>
+                        <outlet property="windSpeedLabel" destination="JuB-xj-8tb" id="D9h-kn-025"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cKp-58-sph" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1486.9565217391305" y="2.6785714285714284"/>
+        </scene>
     </scenes>
 </document>

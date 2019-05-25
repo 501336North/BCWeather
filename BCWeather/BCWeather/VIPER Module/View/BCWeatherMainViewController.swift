@@ -12,7 +12,7 @@ class BCWeatherMainViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     var openWeatherItems: [OpenWeather] = []
-    var presenter: BCWeatherMainPresenterProtocol?
+    var presenter: BCWeatherPresenterProtocol?
     private let refreshControl = UIRefreshControl()
 
     override func viewDidLoad() {
@@ -40,7 +40,7 @@ class BCWeatherMainViewController: UIViewController {
 }
 
 extension BCWeatherMainViewController:  BCWeatherMainViewProtocol {
-    
+
     func showOpenWeatherView(with openWeather: [OpenWeather]) {
         openWeatherItems = openWeather
         refreshControl.endRefreshing()
@@ -81,9 +81,6 @@ extension BCWeatherMainViewController: UITableViewDelegate, UITableViewDataSourc
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let cell = tableView.cellForRow(at: indexPath) as! BCWeatherMainCell
-        let openWeather = openWeatherItems[indexPath.row]
-
-        //TODO: push Details Controller using Interactor
+        presenter?.navigateToDetails(weather: openWeatherItems[indexPath.row], from: self)
     }
 }

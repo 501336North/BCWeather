@@ -19,8 +19,7 @@
 		287533B02298D6BD0049505F /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287533AF2298D6BD0049505F /* APIClient.swift */; };
 		287533B52298D92D0049505F /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287533B42298D92D0049505F /* Weather.swift */; };
 		287533B72298D96A0049505F /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287533B62298D96A0049505F /* APIRouter.swift */; };
-		287533C02298DAD10049505F /* BCWeatherMainWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287533BF2298DAD10049505F /* BCWeatherMainWireFrame.swift */; };
-		287533C22298DB500049505F /* BCWeatherMainWireFrameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287533C12298DB500049505F /* BCWeatherMainWireFrameProtocol.swift */; };
+		287533C02298DAD10049505F /* BCWeatherWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287533BF2298DAD10049505F /* BCWeatherWireFrame.swift */; };
 		287533C622996CBB0049505F /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287533C522996CBB0049505F /* Coordinates.swift */; };
 		287533C822996CD40049505F /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287533C722996CD40049505F /* Main.swift */; };
 		287533CA22996CE30049505F /* Wind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287533C922996CE30049505F /* Wind.swift */; };
@@ -33,16 +32,12 @@
 		287533D822997C720049505F /* BCWeatherMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287533D722997C720049505F /* BCWeatherMainViewController.swift */; };
 		287533DA22998AB70049505F /* OpenWeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287533D922998AB70049505F /* OpenWeatherResponse.swift */; };
 		287533DC2299B08D0049505F /* BCWeatherDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287533DB2299B08D0049505F /* BCWeatherDataManager.swift */; };
-		287533DE2299B1B30049505F /* BCWeatherRemoteDataManagerInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287533DD2299B1B30049505F /* BCWeatherRemoteDataManagerInputProtocol.swift */; };
-		287533E02299B2100049505F /* BCWeatherRemoteDataManagerOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287533DF2299B2100049505F /* BCWeatherRemoteDataManagerOutputProtocol.swift */; };
-		287533E22299B2BB0049505F /* BCWeatherMainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287533E12299B2BB0049505F /* BCWeatherMainPresenter.swift */; };
-		287533E42299B3850049505F /* BCWeatherMainPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287533E32299B3850049505F /* BCWeatherMainPresenterProtocol.swift */; };
-		287533E62299B3CE0049505F /* BCWeatherMainViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287533E52299B3CE0049505F /* BCWeatherMainViewProtocol.swift */; };
-		287533E82299B41A0049505F /* BCWeatherMainInteractorInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287533E72299B41A0049505F /* BCWeatherMainInteractorInputProtocol.swift */; };
-		287533EA2299B5340049505F /* BCWeatherMainInteractorOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287533E92299B5340049505F /* BCWeatherMainInteractorOutputProtocol.swift */; };
-		287533EC2299B5BE0049505F /* BCWeatherMainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287533EB2299B5BE0049505F /* BCWeatherMainInteractor.swift */; };
+		287533E22299B2BB0049505F /* BCWeatherPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287533E12299B2BB0049505F /* BCWeatherPresenter.swift */; };
+		287533EC2299B5BE0049505F /* BCWeatherInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287533EB2299B5BE0049505F /* BCWeatherInteractor.swift */; };
 		287533EE2299BC0C0049505F /* BCWeatherMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287533ED2299BC0C0049505F /* BCWeatherMainCell.swift */; };
 		287533F42299CB280049505F /* BCWeatherMainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 287533F32299CB280049505F /* BCWeatherMainCell.xib */; };
+		2875340E2299D2D20049505F /* BCWeatherDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287534032299D2D20049505F /* BCWeatherDetailViewController.swift */; };
+		2875341C2299E95A0049505F /* BCWeatherProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2875341B2299E95A0049505F /* BCWeatherProtocol.swift */; };
 		ACDD4DAB872C5125CBC78C6E /* Pods_BCWeatherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C329DE396BBED6F34D9EF19 /* Pods_BCWeatherTests.framework */; };
 		F910726E3BCEB99CBB0A9CBE /* Pods_BCWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DD64910208318E776D02B7E /* Pods_BCWeather.framework */; };
 /* End PBXBuildFile section */
@@ -77,8 +72,7 @@
 		287533AF2298D6BD0049505F /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		287533B42298D92D0049505F /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		287533B62298D96A0049505F /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
-		287533BF2298DAD10049505F /* BCWeatherMainWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCWeatherMainWireFrame.swift; sourceTree = "<group>"; };
-		287533C12298DB500049505F /* BCWeatherMainWireFrameProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCWeatherMainWireFrameProtocol.swift; sourceTree = "<group>"; };
+		287533BF2298DAD10049505F /* BCWeatherWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCWeatherWireFrame.swift; sourceTree = "<group>"; };
 		287533C522996CBB0049505F /* Coordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinates.swift; sourceTree = "<group>"; };
 		287533C722996CD40049505F /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		287533C922996CE30049505F /* Wind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wind.swift; sourceTree = "<group>"; };
@@ -91,16 +85,12 @@
 		287533D722997C720049505F /* BCWeatherMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCWeatherMainViewController.swift; sourceTree = "<group>"; };
 		287533D922998AB70049505F /* OpenWeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherResponse.swift; sourceTree = "<group>"; };
 		287533DB2299B08D0049505F /* BCWeatherDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCWeatherDataManager.swift; sourceTree = "<group>"; };
-		287533DD2299B1B30049505F /* BCWeatherRemoteDataManagerInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCWeatherRemoteDataManagerInputProtocol.swift; sourceTree = "<group>"; };
-		287533DF2299B2100049505F /* BCWeatherRemoteDataManagerOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCWeatherRemoteDataManagerOutputProtocol.swift; sourceTree = "<group>"; };
-		287533E12299B2BB0049505F /* BCWeatherMainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCWeatherMainPresenter.swift; sourceTree = "<group>"; };
-		287533E32299B3850049505F /* BCWeatherMainPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCWeatherMainPresenterProtocol.swift; sourceTree = "<group>"; };
-		287533E52299B3CE0049505F /* BCWeatherMainViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCWeatherMainViewProtocol.swift; sourceTree = "<group>"; };
-		287533E72299B41A0049505F /* BCWeatherMainInteractorInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCWeatherMainInteractorInputProtocol.swift; sourceTree = "<group>"; };
-		287533E92299B5340049505F /* BCWeatherMainInteractorOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCWeatherMainInteractorOutputProtocol.swift; sourceTree = "<group>"; };
-		287533EB2299B5BE0049505F /* BCWeatherMainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCWeatherMainInteractor.swift; sourceTree = "<group>"; };
+		287533E12299B2BB0049505F /* BCWeatherPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCWeatherPresenter.swift; sourceTree = "<group>"; };
+		287533EB2299B5BE0049505F /* BCWeatherInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCWeatherInteractor.swift; sourceTree = "<group>"; };
 		287533ED2299BC0C0049505F /* BCWeatherMainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCWeatherMainCell.swift; sourceTree = "<group>"; };
 		287533F32299CB280049505F /* BCWeatherMainCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BCWeatherMainCell.xib; sourceTree = "<group>"; };
+		287534032299D2D20049505F /* BCWeatherDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BCWeatherDetailViewController.swift; sourceTree = "<group>"; };
+		2875341B2299E95A0049505F /* BCWeatherProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCWeatherProtocol.swift; sourceTree = "<group>"; };
 		5855421D82A34B6EE5A749E5 /* Pods-BCWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCWeather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BCWeather/Pods-BCWeather.debug.xcconfig"; sourceTree = "<group>"; };
 		7926B1DB6F592A95952B02F0 /* Pods-BCWeatherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCWeatherTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BCWeatherTests/Pods-BCWeatherTests.release.xcconfig"; sourceTree = "<group>"; };
 		7DD64910208318E776D02B7E /* Pods_BCWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BCWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,7 +150,6 @@
 			children = (
 				287533802298C0F90049505F /* AppDelegate.swift */,
 				287533A42298D37D0049505F /* Bootstrapper.swift */,
-				287533F32299CB280049505F /* BCWeatherMainCell.xib */,
 				287533842298C0F90049505F /* Main.storyboard */,
 				287533892298C0FB0049505F /* LaunchScreen.storyboard */,
 				2875338C2298C0FB0049505F /* Info.plist */,
@@ -168,8 +157,9 @@
 				287533A72298D4E60049505F /* Entities */,
 				287533A82298D4F50049505F /* Factories */,
 				287533A12298D1940049505F /* Helpers */,
+				2875341D2299E9A70049505F /* Protocol */,
 				287533A92298D50A0049505F /* Services */,
-				287533AA2298D52C0049505F /* VIPER Modules */,
+				287533AA2298D52C0049505F /* VIPER Module */,
 				287533872298C0FB0049505F /* Assets.xcassets */,
 			);
 			path = BCWeather;
@@ -195,6 +185,7 @@
 		287533A12298D1940049505F /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				287533DB2299B08D0049505F /* BCWeatherDataManager.swift */,
 				287533A22298D1C50049505F /* Extensions.swift */,
 				287533AF2298D6BD0049505F /* APIClient.swift */,
 				287533B62298D96A0049505F /* APIRouter.swift */,
@@ -235,80 +226,58 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		287533AA2298D52C0049505F /* VIPER Modules */ = {
+		287533AA2298D52C0049505F /* VIPER Module */ = {
 			isa = PBXGroup;
 			children = (
-				287533B82298DA370049505F /* BCWeatherMainModule */,
+				2875341E2299E9CC0049505F /* View */,
+				2875341F2299E9DA0049505F /* Interactor */,
+				287534202299E9E70049505F /* Presenter */,
+				287534212299E9F60049505F /* Router */,
 			);
-			path = "VIPER Modules";
+			path = "VIPER Module";
 			sourceTree = "<group>";
 		};
-		287533B82298DA370049505F /* BCWeatherMainModule */ = {
+		2875341D2299E9A70049505F /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				287533B92298DA5F0049505F /* DataManager */,
-				287533BB2298DA7B0049505F /* Presenter */,
-				287533BA2298DA710049505F /* Wireframe */,
-				287533BC2298DA870049505F /* View */,
-				287533BD2298DA8E0049505F /* Protocol */,
-				287533BE2298DA950049505F /* Interactor */,
-			);
-			path = BCWeatherMainModule;
-			sourceTree = "<group>";
-		};
-		287533B92298DA5F0049505F /* DataManager */ = {
-			isa = PBXGroup;
-			children = (
-				287533DB2299B08D0049505F /* BCWeatherDataManager.swift */,
-			);
-			path = DataManager;
-			sourceTree = "<group>";
-		};
-		287533BA2298DA710049505F /* Wireframe */ = {
-			isa = PBXGroup;
-			children = (
-				287533BF2298DAD10049505F /* BCWeatherMainWireFrame.swift */,
-			);
-			path = Wireframe;
-			sourceTree = "<group>";
-		};
-		287533BB2298DA7B0049505F /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				287533E12299B2BB0049505F /* BCWeatherMainPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		287533BC2298DA870049505F /* View */ = {
-			isa = PBXGroup;
-			children = (
-				287533D722997C720049505F /* BCWeatherMainViewController.swift */,
-				287533ED2299BC0C0049505F /* BCWeatherMainCell.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		287533BD2298DA8E0049505F /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-				287533C12298DB500049505F /* BCWeatherMainWireFrameProtocol.swift */,
-				287533DD2299B1B30049505F /* BCWeatherRemoteDataManagerInputProtocol.swift */,
-				287533DF2299B2100049505F /* BCWeatherRemoteDataManagerOutputProtocol.swift */,
-				287533E32299B3850049505F /* BCWeatherMainPresenterProtocol.swift */,
-				287533E52299B3CE0049505F /* BCWeatherMainViewProtocol.swift */,
-				287533E72299B41A0049505F /* BCWeatherMainInteractorInputProtocol.swift */,
-				287533E92299B5340049505F /* BCWeatherMainInteractorOutputProtocol.swift */,
+				2875341B2299E95A0049505F /* BCWeatherProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
 		};
-		287533BE2298DA950049505F /* Interactor */ = {
+		2875341E2299E9CC0049505F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				287533EB2299B5BE0049505F /* BCWeatherMainInteractor.swift */,
+				287533D722997C720049505F /* BCWeatherMainViewController.swift */,
+				287534032299D2D20049505F /* BCWeatherDetailViewController.swift */,
+				287533ED2299BC0C0049505F /* BCWeatherMainCell.swift */,
+				287533F32299CB280049505F /* BCWeatherMainCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2875341F2299E9DA0049505F /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				287533EB2299B5BE0049505F /* BCWeatherInteractor.swift */,
 			);
 			path = Interactor;
+			sourceTree = "<group>";
+		};
+		287534202299E9E70049505F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				287533E12299B2BB0049505F /* BCWeatherPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		287534212299E9F60049505F /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				287533BF2298DAD10049505F /* BCWeatherWireFrame.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 		C9D394A2175C5F75810A1CA8 /* Pods */ = {
@@ -544,31 +513,26 @@
 				287533DA22998AB70049505F /* OpenWeatherResponse.swift in Sources */,
 				287533AC2298D5980049505F /* ServiceFactory.swift in Sources */,
 				287533A32298D1C50049505F /* Extensions.swift in Sources */,
+				2875340E2299D2D20049505F /* BCWeatherDetailViewController.swift in Sources */,
 				287533D822997C720049505F /* BCWeatherMainViewController.swift in Sources */,
 				287533CE22996D030049505F /* Rain.swift in Sources */,
 				287533EE2299BC0C0049505F /* BCWeatherMainCell.swift in Sources */,
-				287533EA2299B5340049505F /* BCWeatherMainInteractorOutputProtocol.swift in Sources */,
 				287533A52298D37D0049505F /* Bootstrapper.swift in Sources */,
-				287533E42299B3850049505F /* BCWeatherMainPresenterProtocol.swift in Sources */,
 				287533812298C0F90049505F /* AppDelegate.swift in Sources */,
 				287533D422996D4F0049505F /* OpenWeather.swift in Sources */,
-				287533E22299B2BB0049505F /* BCWeatherMainPresenter.swift in Sources */,
-				287533C22298DB500049505F /* BCWeatherMainWireFrameProtocol.swift in Sources */,
-				287533EC2299B5BE0049505F /* BCWeatherMainInteractor.swift in Sources */,
-				287533E82299B41A0049505F /* BCWeatherMainInteractorInputProtocol.swift in Sources */,
+				287533E22299B2BB0049505F /* BCWeatherPresenter.swift in Sources */,
+				287533EC2299B5BE0049505F /* BCWeatherInteractor.swift in Sources */,
 				287533D222996D1F0049505F /* Sys.swift in Sources */,
 				287533C822996CD40049505F /* Main.swift in Sources */,
-				287533C02298DAD10049505F /* BCWeatherMainWireFrame.swift in Sources */,
-				287533E02299B2100049505F /* BCWeatherRemoteDataManagerOutputProtocol.swift in Sources */,
+				287533C02298DAD10049505F /* BCWeatherWireFrame.swift in Sources */,
+				2875341C2299E95A0049505F /* BCWeatherProtocol.swift in Sources */,
 				287533C622996CBB0049505F /* Coordinates.swift in Sources */,
-				287533E62299B3CE0049505F /* BCWeatherMainViewProtocol.swift in Sources */,
 				287533B72298D96A0049505F /* APIRouter.swift in Sources */,
 				287533B02298D6BD0049505F /* APIClient.swift in Sources */,
 				287533D022996D0E0049505F /* Snow.swift in Sources */,
 				287533CC22996CF30049505F /* Cloud.swift in Sources */,
 				287533B52298D92D0049505F /* Weather.swift in Sources */,
 				287533CA22996CE30049505F /* Wind.swift in Sources */,
-				287533DE2299B1B30049505F /* BCWeatherRemoteDataManagerInputProtocol.swift in Sources */,
 				287533DC2299B08D0049505F /* BCWeatherDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

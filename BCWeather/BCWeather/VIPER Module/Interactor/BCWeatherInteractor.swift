@@ -1,5 +1,5 @@
 //
-//  BCWeatherMainInteractor.swift
+//  BCWeatherInteractor.swift
 //  BCWeather
 //
 //  Created by Yanick Lavoie on 2019-05-25.
@@ -9,8 +9,8 @@
 import UIKit
 
 
-class BCWeatherMainInteractor: BCWeatherMainInteractorInputProtocol {
-    weak var presenter: BCWeatherMainInteractorOutputProtocol?
+class BCWeatherInteractor: BCWeatherInteractorInputProtocol {
+    weak var presenter: BCWeatherInteractorOutputProtocol?
     var remoteDatamanager: BCWeatherRemoteDataManagerInputProtocol?
 
     /// function to retrieve the list of Open Weather object
@@ -19,7 +19,7 @@ class BCWeatherMainInteractor: BCWeatherMainInteractorInputProtocol {
     }
 }
 
-extension BCWeatherMainInteractor: BCWeatherRemoteDataManagerOutputProtocol {
+extension BCWeatherInteractor: BCWeatherRemoteDataManagerOutputProtocol {
     /// callback function.  Called when we did retrieve OpenWeather List
     /// - Parameters : Array of OpenWeather Objects
     func onOpenWeatherRetrieved(_ openWeather: [OpenWeather]) {
