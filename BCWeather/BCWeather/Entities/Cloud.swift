@@ -11,7 +11,7 @@ import ObjectMapper
 
 struct Cloud: Mappable {
 
-    var all: String?
+    var all: Double?
 
     init?(map: Map) {
     }
