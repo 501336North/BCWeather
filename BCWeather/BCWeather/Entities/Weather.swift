@@ -9,15 +9,18 @@
 import Foundation
 import ObjectMapper
 
-
 struct Weather: Mappable {
 
-    var city: String?
+    var id: String?
+    var desc: String?
+    var icon: String?
 
     init?(map: Map) {
     }
 
     mutating func mapping(map: Map) {
-        city             <- map["city"]
+        id             <- map["id"]
+        desc           <- map["description"]
+        icon           <- map["icon"]
     }
 }
