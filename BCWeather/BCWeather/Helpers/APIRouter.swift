@@ -8,15 +8,18 @@
 
 import Alamofire
 
-enum HTTPHeaderField: String {
-    case authentication = "Authorization"
-    case contentType = "Content-Type"
-    case acceptType = "Accept"
-    case acceptEncoding = "Accept-Encoding"
-}
+enum MonitoredCities : CaseIterable {
+    case London
+    case Tokyo
 
-enum ContentType: String {
-    case json = "application/json"
+    var cityId: String {
+        switch self {
+        case .London:
+            return "2643744"
+        case .Tokyo:
+            return "1850147"
+        }
+    }
 }
 
 enum APIRouter: URLRequestConvertible {
@@ -34,17 +37,30 @@ enum APIRouter: URLRequestConvertible {
     private var path: String {
         switch self {
         case .retrieveWeather(let city):
-            return "/data/2.5/weather?q=" +  city + "&"
+
+            var cityIDs = MonitoredCities.allCases
+                .map { "\($0.cityId)" }
+                .joined(separator: ",")
+
+            //TODO: get ID for the current city to pass as the 3rd param
+            if city != "" {
+                let currentCityID = "111111"
+                cityIDs = cityIDs + "," + currentCityID
+            }
+
+            //TOO: handle metric or farenheit
+            let unit = "metric"
+            return "/data/2.5/group?id=" +  cityIDs + "&units=" + unit + "&appid=" + APIRouter.apiKey
         }
     }
 
     func asURLRequest() throws -> URLRequest {
-        var urlRequest = URLRequest(url: URL(string: APIRouter.baseUrl)!.appendingPathComponent(path))
+        let urlString = APIRouter.baseUrl + path
+        //TODO: get rid of this forced unwrap
+        let url = URL(string: urlString)!
+        var urlRequest = URLRequest(url: url)
 
         urlRequest.httpMethod = method.rawValue
-        urlRequest.setValue(ContentType.json.rawValue, forHTTPHeaderField: HTTPHeaderField.acceptType.rawValue)
-        urlRequest.setValue(ContentType.json.rawValue, forHTTPHeaderField: HTTPHeaderField.contentType.rawValue)
-
         return urlRequest
     }
 }
@@ -52,7 +68,7 @@ enum APIRouter: URLRequestConvertible {
 /// function to key Meet API Key in the info.plist file
 extension APIRouter {
     static var apiKey: String {
-        return Bundle.main.object(forInfoDictionaryKey: "APIKey") as! String
+        return Bundle.main.object(forInfoDictionaryKey: "openWeatherAPIKey") as! String
     }
 }
 

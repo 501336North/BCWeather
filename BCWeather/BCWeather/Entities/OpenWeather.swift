@@ -12,18 +12,19 @@ import ObjectMapper
 struct OpenWeather: Mappable {
 
     var coord: Coordinates?
-    var weather: Weather?
+    var weather: [Weather]?
     var base: String?
     var main: Main?
     var wind: Wind?
     var clouds: Cloud?
     var rain: Rain?
     var snow: Snow?
-    var dt: Date?
+    var dt: Double?
     var sys: Sys?
-    var id: String?
+    var visibility: Double?
+    var id: Double?
     var name: String?
-    var cod: String?
+    var cod: Double?
 
     init?(map: Map) {
     }
@@ -39,6 +40,7 @@ struct OpenWeather: Mappable {
         snow              <- map["snow"]
         dt                <- map["dt"]
         sys               <- map["sys"]
+        visibility        <- map["visibility"]
         id                <- map["id"]
         name              <- map["name"]
         cod               <- map["cod"]

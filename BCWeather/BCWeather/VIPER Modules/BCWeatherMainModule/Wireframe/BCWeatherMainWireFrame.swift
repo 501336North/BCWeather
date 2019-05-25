@@ -12,6 +12,11 @@ class BCWeatherMainWireFrame: BCWeatherMainWireFrameProtocol {
     /// createEventListModule function.  Called to create the SsmpleEntity List Module.
     /// - Returns : the Event List View Controller
     class func createBCWeatherMainModule() -> UIViewController {
+        // test Network
+        //TODO: To be removed
+        // we would need the city as a param
+        _ = APIClient.retrieveWeather(for: "", completion: {_ in })
+
         let navController = mainStoryboard.instantiateViewController(withIdentifier: "BCWeatherMainView")
 
         return UIViewController()

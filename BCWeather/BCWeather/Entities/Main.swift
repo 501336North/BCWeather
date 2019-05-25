@@ -11,13 +11,13 @@ import ObjectMapper
 
 struct Main: Mappable {
 
-    var temp: String?
-    var pressure: String?
-    var humidity: String?
-    var minTemp: String?
-    var maxTemp: String?
-    var seaLevel: String?
-    var groundLevel: String?
+    var temp: Double?
+    var pressure: Double?
+    var humidity: Double?
+    var minTemp: Double?
+    var maxTemp: Double?
+    var seaLevel: Double?
+    var groundLevel: Double?
 
     init?(map: Map) {
     }

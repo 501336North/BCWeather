@@ -11,7 +11,8 @@ import ObjectMapper
 
 struct Weather: Mappable {
 
-    var id: String?
+    var id: Double?
+    var main: String?
     var desc: String?
     var icon: String?
 
@@ -20,6 +21,7 @@ struct Weather: Mappable {
 
     mutating func mapping(map: Map) {
         id             <- map["id"]
+        main           <- map["main"]
         desc           <- map["description"]
         icon           <- map["icon"]
     }

@@ -11,20 +11,21 @@ import AlamofireObjectMapper
 
 class APIClient {
     @discardableResult
-    private static func performRequest(route:APIRouter, decoder: JSONDecoder = JSONDecoder(), completion:@escaping (Weather)->Void) -> DataRequest {
+    private static func performRequest(route:APIRouter, decoder: JSONDecoder = JSONDecoder(), completion:@escaping ([OpenWeather])->Void) -> DataRequest {
 
-        return Alamofire.request(route).responseObject() { (response: DataResponse<Weather>) in
-            let event = response.result.value
+        return Alamofire.request(route).responseObject() { (response: DataResponse<OpenWeatherResponse>) in
+            let openWeatherResponse = response.result.value
             switch response.result {
             case .success:
-                completion(event!)
+                //TODO: Take care of this forced unwrap
+                completion(openWeatherResponse!.list ?? [])
             case .failure(let error):
                 print(error)
             }
         }
     }
 
-    static func retrieveWeather(for city: String, completion:@escaping (Weather)->Void) {
+    static func retrieveWeather(for city: String, completion:@escaping ([OpenWeather])->Void) {
         performRequest(route: APIRouter.retrieveWeather(city: city), completion: completion)
     }
 

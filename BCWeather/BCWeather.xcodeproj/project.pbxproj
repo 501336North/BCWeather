@@ -29,6 +29,9 @@
 		287533D022996D0E0049505F /* Snow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287533CF22996D0E0049505F /* Snow.swift */; };
 		287533D222996D1F0049505F /* Sys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287533D122996D1F0049505F /* Sys.swift */; };
 		287533D422996D4F0049505F /* OpenWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287533D322996D4F0049505F /* OpenWeather.swift */; };
+		287533D6229974B60049505F /* city.list.json in Resources */ = {isa = PBXBuildFile; fileRef = 287533D5229974AF0049505F /* city.list.json */; };
+		287533D822997C720049505F /* BCWeatherMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287533D722997C720049505F /* BCWeatherMainViewController.swift */; };
+		287533DA22998AB70049505F /* OpenWeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287533D922998AB70049505F /* OpenWeatherResponse.swift */; };
 		ACDD4DAB872C5125CBC78C6E /* Pods_BCWeatherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C329DE396BBED6F34D9EF19 /* Pods_BCWeatherTests.framework */; };
 		F910726E3BCEB99CBB0A9CBE /* Pods_BCWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DD64910208318E776D02B7E /* Pods_BCWeather.framework */; };
 /* End PBXBuildFile section */
@@ -73,6 +76,9 @@
 		287533CF22996D0E0049505F /* Snow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snow.swift; sourceTree = "<group>"; };
 		287533D122996D1F0049505F /* Sys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sys.swift; sourceTree = "<group>"; };
 		287533D322996D4F0049505F /* OpenWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeather.swift; sourceTree = "<group>"; };
+		287533D5229974AF0049505F /* city.list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = city.list.json; sourceTree = "<group>"; };
+		287533D722997C720049505F /* BCWeatherMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCWeatherMainViewController.swift; sourceTree = "<group>"; };
+		287533D922998AB70049505F /* OpenWeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherResponse.swift; sourceTree = "<group>"; };
 		5855421D82A34B6EE5A749E5 /* Pods-BCWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCWeather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BCWeather/Pods-BCWeather.debug.xcconfig"; sourceTree = "<group>"; };
 		7926B1DB6F592A95952B02F0 /* Pods-BCWeatherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCWeatherTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BCWeatherTests/Pods-BCWeatherTests.release.xcconfig"; sourceTree = "<group>"; };
 		7DD64910208318E776D02B7E /* Pods_BCWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BCWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +164,7 @@
 		287533A02298D1740049505F /* Closures */ = {
 			isa = PBXGroup;
 			children = (
+				287533D5229974AF0049505F /* city.list.json */,
 			);
 			path = Closures;
 			sourceTree = "<group>";
@@ -175,6 +182,7 @@
 		287533A72298D4E60049505F /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				287533D922998AB70049505F /* OpenWeatherResponse.swift */,
 				287533D322996D4F0049505F /* OpenWeather.swift */,
 				287533C522996CBB0049505F /* Coordinates.swift */,
 				287533B42298D92D0049505F /* Weather.swift */,
@@ -250,6 +258,7 @@
 		287533BC2298DA870049505F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				287533D722997C720049505F /* BCWeatherMainViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -366,6 +375,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2875338B2298C0FB0049505F /* LaunchScreen.storyboard in Resources */,
+				287533D6229974B60049505F /* city.list.json in Resources */,
 				287533882298C0FB0049505F /* Assets.xcassets in Resources */,
 				287533862298C0F90049505F /* Main.storyboard in Resources */,
 			);
@@ -497,8 +507,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				287533AE2298D6110049505F /* AppStartupService.swift in Sources */,
+				287533DA22998AB70049505F /* OpenWeatherResponse.swift in Sources */,
 				287533AC2298D5980049505F /* ServiceFactory.swift in Sources */,
 				287533A32298D1C50049505F /* Extensions.swift in Sources */,
+				287533D822997C720049505F /* BCWeatherMainViewController.swift in Sources */,
 				287533CE22996D030049505F /* Rain.swift in Sources */,
 				287533A52298D37D0049505F /* Bootstrapper.swift in Sources */,
 				287533812298C0F90049505F /* AppDelegate.swift in Sources */,
