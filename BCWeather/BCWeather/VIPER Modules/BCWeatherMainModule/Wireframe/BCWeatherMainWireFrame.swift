@@ -9,16 +9,27 @@
 import UIKit
 
 class BCWeatherMainWireFrame: BCWeatherMainWireFrameProtocol {
-    /// createEventListModule function.  Called to create the SsmpleEntity List Module.
-    /// - Returns : the Event List View Controller
+    /// createBCWeatherMainModule function.  Called to create the OpenWeather List Module.
+    /// - Returns : the OpenWeather List View Controller
     class func createBCWeatherMainModule() -> UIViewController {
-        // test Network
-        //TODO: To be removed
-        // we would need the city as a param
-        _ = APIClient.retrieveWeather(for: "", completion: {_ in })
 
         let navController = mainStoryboard.instantiateViewController(withIdentifier: "BCWeatherMainView")
+        if let view = navController.children.first as? BCWeatherMainViewController {
+            let presenter: BCWeatherMainPresenterProtocol & BCWeatherMainInteractorOutputProtocol = BCWeatherMainPresenter()
+            let interactor: BCWeatherMainInteractorInputProtocol & BCWeatherRemoteDataManagerOutputProtocol = BCWeatherMainInteractor()
+            let remoteDataManager: BCWeatherRemoteDataManagerInputProtocol = BCWeatherDataManager()
+            let wireFrame: BCWeatherMainWireFrameProtocol = BCWeatherMainWireFrame()
 
+            view.presenter = presenter
+            presenter.view = view
+            presenter.wireFrame = wireFrame
+            presenter.interactor = interactor
+            interactor.presenter = presenter
+            interactor.remoteDatamanager = remoteDataManager
+            remoteDataManager.remoteRequestHandler = interactor
+
+            return navController
+        }
         return UIViewController()
     }
 

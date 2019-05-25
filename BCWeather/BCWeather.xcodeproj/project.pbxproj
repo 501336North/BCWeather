@@ -32,6 +32,17 @@
 		287533D6229974B60049505F /* city.list.json in Resources */ = {isa = PBXBuildFile; fileRef = 287533D5229974AF0049505F /* city.list.json */; };
 		287533D822997C720049505F /* BCWeatherMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287533D722997C720049505F /* BCWeatherMainViewController.swift */; };
 		287533DA22998AB70049505F /* OpenWeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287533D922998AB70049505F /* OpenWeatherResponse.swift */; };
+		287533DC2299B08D0049505F /* BCWeatherDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287533DB2299B08D0049505F /* BCWeatherDataManager.swift */; };
+		287533DE2299B1B30049505F /* BCWeatherRemoteDataManagerInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287533DD2299B1B30049505F /* BCWeatherRemoteDataManagerInputProtocol.swift */; };
+		287533E02299B2100049505F /* BCWeatherRemoteDataManagerOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287533DF2299B2100049505F /* BCWeatherRemoteDataManagerOutputProtocol.swift */; };
+		287533E22299B2BB0049505F /* BCWeatherMainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287533E12299B2BB0049505F /* BCWeatherMainPresenter.swift */; };
+		287533E42299B3850049505F /* BCWeatherMainPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287533E32299B3850049505F /* BCWeatherMainPresenterProtocol.swift */; };
+		287533E62299B3CE0049505F /* BCWeatherMainViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287533E52299B3CE0049505F /* BCWeatherMainViewProtocol.swift */; };
+		287533E82299B41A0049505F /* BCWeatherMainInteractorInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287533E72299B41A0049505F /* BCWeatherMainInteractorInputProtocol.swift */; };
+		287533EA2299B5340049505F /* BCWeatherMainInteractorOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287533E92299B5340049505F /* BCWeatherMainInteractorOutputProtocol.swift */; };
+		287533EC2299B5BE0049505F /* BCWeatherMainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287533EB2299B5BE0049505F /* BCWeatherMainInteractor.swift */; };
+		287533EE2299BC0C0049505F /* BCWeatherMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287533ED2299BC0C0049505F /* BCWeatherMainCell.swift */; };
+		287533F42299CB280049505F /* BCWeatherMainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 287533F32299CB280049505F /* BCWeatherMainCell.xib */; };
 		ACDD4DAB872C5125CBC78C6E /* Pods_BCWeatherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C329DE396BBED6F34D9EF19 /* Pods_BCWeatherTests.framework */; };
 		F910726E3BCEB99CBB0A9CBE /* Pods_BCWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DD64910208318E776D02B7E /* Pods_BCWeather.framework */; };
 /* End PBXBuildFile section */
@@ -79,6 +90,17 @@
 		287533D5229974AF0049505F /* city.list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = city.list.json; sourceTree = "<group>"; };
 		287533D722997C720049505F /* BCWeatherMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCWeatherMainViewController.swift; sourceTree = "<group>"; };
 		287533D922998AB70049505F /* OpenWeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherResponse.swift; sourceTree = "<group>"; };
+		287533DB2299B08D0049505F /* BCWeatherDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCWeatherDataManager.swift; sourceTree = "<group>"; };
+		287533DD2299B1B30049505F /* BCWeatherRemoteDataManagerInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCWeatherRemoteDataManagerInputProtocol.swift; sourceTree = "<group>"; };
+		287533DF2299B2100049505F /* BCWeatherRemoteDataManagerOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCWeatherRemoteDataManagerOutputProtocol.swift; sourceTree = "<group>"; };
+		287533E12299B2BB0049505F /* BCWeatherMainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCWeatherMainPresenter.swift; sourceTree = "<group>"; };
+		287533E32299B3850049505F /* BCWeatherMainPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCWeatherMainPresenterProtocol.swift; sourceTree = "<group>"; };
+		287533E52299B3CE0049505F /* BCWeatherMainViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCWeatherMainViewProtocol.swift; sourceTree = "<group>"; };
+		287533E72299B41A0049505F /* BCWeatherMainInteractorInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCWeatherMainInteractorInputProtocol.swift; sourceTree = "<group>"; };
+		287533E92299B5340049505F /* BCWeatherMainInteractorOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCWeatherMainInteractorOutputProtocol.swift; sourceTree = "<group>"; };
+		287533EB2299B5BE0049505F /* BCWeatherMainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCWeatherMainInteractor.swift; sourceTree = "<group>"; };
+		287533ED2299BC0C0049505F /* BCWeatherMainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCWeatherMainCell.swift; sourceTree = "<group>"; };
+		287533F32299CB280049505F /* BCWeatherMainCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BCWeatherMainCell.xib; sourceTree = "<group>"; };
 		5855421D82A34B6EE5A749E5 /* Pods-BCWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCWeather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BCWeather/Pods-BCWeather.debug.xcconfig"; sourceTree = "<group>"; };
 		7926B1DB6F592A95952B02F0 /* Pods-BCWeatherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCWeatherTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BCWeatherTests/Pods-BCWeatherTests.release.xcconfig"; sourceTree = "<group>"; };
 		7DD64910208318E776D02B7E /* Pods_BCWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BCWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,6 +160,7 @@
 			children = (
 				287533802298C0F90049505F /* AppDelegate.swift */,
 				287533A42298D37D0049505F /* Bootstrapper.swift */,
+				287533F32299CB280049505F /* BCWeatherMainCell.xib */,
 				287533842298C0F90049505F /* Main.storyboard */,
 				287533892298C0FB0049505F /* LaunchScreen.storyboard */,
 				2875338C2298C0FB0049505F /* Info.plist */,
@@ -236,6 +259,7 @@
 		287533B92298DA5F0049505F /* DataManager */ = {
 			isa = PBXGroup;
 			children = (
+				287533DB2299B08D0049505F /* BCWeatherDataManager.swift */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -251,6 +275,7 @@
 		287533BB2298DA7B0049505F /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				287533E12299B2BB0049505F /* BCWeatherMainPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -259,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				287533D722997C720049505F /* BCWeatherMainViewController.swift */,
+				287533ED2299BC0C0049505F /* BCWeatherMainCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -267,6 +293,12 @@
 			isa = PBXGroup;
 			children = (
 				287533C12298DB500049505F /* BCWeatherMainWireFrameProtocol.swift */,
+				287533DD2299B1B30049505F /* BCWeatherRemoteDataManagerInputProtocol.swift */,
+				287533DF2299B2100049505F /* BCWeatherRemoteDataManagerOutputProtocol.swift */,
+				287533E32299B3850049505F /* BCWeatherMainPresenterProtocol.swift */,
+				287533E52299B3CE0049505F /* BCWeatherMainViewProtocol.swift */,
+				287533E72299B41A0049505F /* BCWeatherMainInteractorInputProtocol.swift */,
+				287533E92299B5340049505F /* BCWeatherMainInteractorOutputProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -274,6 +306,7 @@
 		287533BE2298DA950049505F /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				287533EB2299B5BE0049505F /* BCWeatherMainInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -375,6 +408,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2875338B2298C0FB0049505F /* LaunchScreen.storyboard in Resources */,
+				287533F42299CB280049505F /* BCWeatherMainCell.xib in Resources */,
 				287533D6229974B60049505F /* city.list.json in Resources */,
 				287533882298C0FB0049505F /* Assets.xcassets in Resources */,
 				287533862298C0F90049505F /* Main.storyboard in Resources */,
@@ -512,20 +546,30 @@
 				287533A32298D1C50049505F /* Extensions.swift in Sources */,
 				287533D822997C720049505F /* BCWeatherMainViewController.swift in Sources */,
 				287533CE22996D030049505F /* Rain.swift in Sources */,
+				287533EE2299BC0C0049505F /* BCWeatherMainCell.swift in Sources */,
+				287533EA2299B5340049505F /* BCWeatherMainInteractorOutputProtocol.swift in Sources */,
 				287533A52298D37D0049505F /* Bootstrapper.swift in Sources */,
+				287533E42299B3850049505F /* BCWeatherMainPresenterProtocol.swift in Sources */,
 				287533812298C0F90049505F /* AppDelegate.swift in Sources */,
 				287533D422996D4F0049505F /* OpenWeather.swift in Sources */,
+				287533E22299B2BB0049505F /* BCWeatherMainPresenter.swift in Sources */,
 				287533C22298DB500049505F /* BCWeatherMainWireFrameProtocol.swift in Sources */,
+				287533EC2299B5BE0049505F /* BCWeatherMainInteractor.swift in Sources */,
+				287533E82299B41A0049505F /* BCWeatherMainInteractorInputProtocol.swift in Sources */,
 				287533D222996D1F0049505F /* Sys.swift in Sources */,
 				287533C822996CD40049505F /* Main.swift in Sources */,
 				287533C02298DAD10049505F /* BCWeatherMainWireFrame.swift in Sources */,
+				287533E02299B2100049505F /* BCWeatherRemoteDataManagerOutputProtocol.swift in Sources */,
 				287533C622996CBB0049505F /* Coordinates.swift in Sources */,
+				287533E62299B3CE0049505F /* BCWeatherMainViewProtocol.swift in Sources */,
 				287533B72298D96A0049505F /* APIRouter.swift in Sources */,
 				287533B02298D6BD0049505F /* APIClient.swift in Sources */,
 				287533D022996D0E0049505F /* Snow.swift in Sources */,
 				287533CC22996CF30049505F /* Cloud.swift in Sources */,
 				287533B52298D92D0049505F /* Weather.swift in Sources */,
 				287533CA22996CE30049505F /* Wind.swift in Sources */,
+				287533DE2299B1B30049505F /* BCWeatherRemoteDataManagerInputProtocol.swift in Sources */,
+				287533DC2299B08D0049505F /* BCWeatherDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
