@@ -38,18 +38,28 @@ enum APIRouter: URLRequestConvertible {
         switch self {
         case .retrieveWeather(let city):
 
+            //TOO: handle metric or farenheit
+            let unit = "metric"
+
             var cityIDs = MonitoredCities.allCases
                 .map { "\($0.cityId)" }
                 .joined(separator: ",")
 
-            //TODO: get ID for the current city to pass as the 3rd param
             if city != "" {
-                let currentCityID = "111111"
-                cityIDs = cityIDs + "," + currentCityID
+                if let filePath = Bundle.main.path(forResource: "city.list", ofType: "json"), let data = NSData(contentsOfFile: filePath) {
+
+                    do {
+                        let decoder = JSONDecoder()
+                        let cities = try decoder.decode([City].self, from: data as Data)
+                        let currentCity = cities.filter{ $0.name == city }.first
+                        guard let currentCityId = currentCity?.id else { return "/data/2.5/group?id=" +  cityIDs + "&units=" + unit + "&appid=" + APIRouter.apiKey }
+                        cityIDs = cityIDs + "," + String(format:"%.0f", currentCityId)
+                    }
+                    catch {
+                    }
+                }
             }
 
-            //TOO: handle metric or farenheit
-            let unit = "metric"
             return "/data/2.5/group?id=" +  cityIDs + "&units=" + unit + "&appid=" + APIRouter.apiKey
         }
     }

@@ -13,15 +13,17 @@ class BCWeatherMainViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var openWeatherItems: [OpenWeather] = []
     var presenter: BCWeatherPresenterProtocol?
+    var locationManager = LocationManager()
     private let refreshControl = UIRefreshControl()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        locationManager.delegate = self
         setupTableView()
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         //TODO: We probably need to move that elsewhere
         refreshWeatherData(self)
     }
@@ -34,8 +36,18 @@ class BCWeatherMainViewController: UIViewController {
     }
 
     @objc private func refreshWeatherData(_ sender: Any) {
-        //TODO: this definitely looks wrong... fix
-        presenter?.interactor?.retrieveWeather(for: "")
+        var currentCity = ""
+        guard let exposedLocation = locationManager.exposedLocation else {
+            self.presenter?.retrieveWeather(for: currentCity)
+            return
+        }
+
+        locationManager.getPlace(for: exposedLocation) { placemark in
+            guard let placemark = placemark else { return }
+            currentCity = placemark.locality ?? ""
+            currentCity = currentCity.folding(options: .diacriticInsensitive, locale: .current)
+            self.presenter?.retrieveWeather(for: currentCity)
+        }
     }
 }
 
@@ -46,6 +58,10 @@ extension BCWeatherMainViewController:  BCWeatherMainViewProtocol {
         refreshControl.endRefreshing()
         guard let tableView = tableView else { return }
         tableView.reloadData()
+    }
+
+    func refreshWeather() {
+        refreshWeatherData(self)
     }
 
     func showError() {
@@ -79,8 +95,19 @@ extension BCWeatherMainViewController: UITableViewDelegate, UITableViewDataSourc
         return UIView()
     }
 
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        let cell = tableView.cellForRow(at: indexPath)
+        if cell?.isSelected ?? false == true {
+            return nil
+        }
+        return indexPath
+    }
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
         presenter?.navigateToDetails(weather: openWeatherItems[indexPath.row], from: self)
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+            self.tableView.deselectRow(at: indexPath, animated: true)
+        })
+
     }
 }

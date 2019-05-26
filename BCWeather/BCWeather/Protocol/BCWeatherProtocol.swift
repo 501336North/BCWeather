@@ -14,6 +14,8 @@ protocol BCWeatherMainViewProtocol: class {
     /// PRESENTER -> VIEW
     func showOpenWeatherView(with openWeather: [OpenWeather])
 
+    func refreshWeather()
+    
     func showError()
 
     func showLoading()
@@ -47,7 +49,7 @@ protocol BCWeatherPresenterProtocol: class {
     /// VIEW -> PRESENTER
     func viewDidLoad()
     func navigateToDetails(weather: OpenWeather, from classRef: UIViewController)
-
+    func retrieveWeather(for city: String)
 }
 
 protocol BCWeatherInteractorInputProtocol: class {

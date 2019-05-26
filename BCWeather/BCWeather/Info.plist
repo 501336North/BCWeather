@@ -22,6 +22,10 @@
 	<string>AIzaSyBN8SbgjKWD7_UGZGH4sqxjbmZZ96D1YV4</string>
 	<key>openWeatherAPIKey</key>
 	<string>65ff393e98dccb396a8fc6d8bd3b7bf4</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>To show weather for current location</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>To show weather for current location</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>

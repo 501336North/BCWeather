@@ -20,6 +20,9 @@ class BCWeatherPresenter: BCWeatherPresenterProtocol {
         interactor?.retrieveWeather(for: "")
     }
 
+    func retrieveWeather(for city: String) {
+        interactor?.retrieveWeather(for: city)
+    }
 
     func navigateToDetails(weather: OpenWeather, from classRef: UIViewController) {
         wireFrame?.navigateToDetails(weather: weather, from: classRef)
