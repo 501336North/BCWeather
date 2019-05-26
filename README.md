@@ -8,6 +8,7 @@ and consume its data.  Although this surely could be improved upon, I definitely
 
 - Just do the traditional pod install in the project's folder
 - then open the .xcworkspace in XCode
+- Clean Build folder just to be sure
 - Build & Run [ideally on a real device to take advantage of Core Location and to see the weather for your current city.]
 
 # External libs
