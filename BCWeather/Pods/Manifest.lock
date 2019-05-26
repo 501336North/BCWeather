@@ -5,7 +5,6 @@ PODS:
   - AlamofireObjectMapper (5.2.0):
     - Alamofire (~> 4.7)
     - ObjectMapper (~> 3.4)
-  - lottie-ios (3.0.6)
   - ObjectMapper (3.4.2)
   - SwiftLint (0.32.0)
   - Swinject (2.6.0)
@@ -13,7 +12,6 @@ PODS:
 DEPENDENCIES:
   - AlamofireImage
   - AlamofireObjectMapper
-  - lottie-ios
   - SwiftLint
   - Swinject
 
@@ -22,7 +20,6 @@ SPEC REPOS:
     - Alamofire
     - AlamofireImage
     - AlamofireObjectMapper
-    - lottie-ios
     - ObjectMapper
     - SwiftLint
     - Swinject
@@ -31,11 +28,10 @@ SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   AlamofireImage: 63cfe3baf1370be6c498149687cf6db3e3b00999
   AlamofireObjectMapper: 92b6ce2423a9d159e686f6a1d514a009bf903ddc
-  lottie-ios: d030b6cda141cfd8bbaa3db89264785e6fdf675a
   ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
   SwiftLint: 009a898ef2a1c851f45e1b59349bf6ff2ddc990d
   Swinject: 48a96cda93633cf2860697b4ce76ab5db9ebaca2
 
-PODFILE CHECKSUM: e73d08e3368700f9396c76dad7d06de7186b31cd
+PODFILE CHECKSUM: 5c9ea9cac604ef44f563a675329ad60f237ac667
 
 COCOAPODS: 1.5.3
