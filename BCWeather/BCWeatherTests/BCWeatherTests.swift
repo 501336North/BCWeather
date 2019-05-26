@@ -7,28 +7,81 @@
 //
 
 import XCTest
+import ObjectMapper
 @testable import BCWeather
 
 class BCWeatherTests: XCTestCase {
+    var openWeather: OpenWeather?
 
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        super.setUp()
+        if let jsonPath = Bundle.main.path(forResource: "openWeatherMock", ofType: "json") {
+            do {
+                let contents = try String(contentsOfFile: jsonPath)
+                openWeather = Mapper<OpenWeather>().map(JSONString: contents)
+            } catch {
+                XCTFail("contents could not be loaded")
+            }
+        } else {
+            XCTFail("json not found!")
+        }
+        XCTAssert(true)
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        openWeather = nil
+        super.tearDown()
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testBCWeatherMainModuleCreation() {
+        let navController = BCWeatherRouteWireFrame.createBCWeatherMainModule()
+        if !(navController.children.first is BCWeatherMainViewController) {
+            XCTFail("Module creation failed. BCWeatherMainController is nil")
+            return
         }
+    }
+
+    func testBCWeatherPresenterCreation() {
+        let navController = BCWeatherRouteWireFrame.createBCWeatherMainModule()
+        let masterViewController = navController.children.first as! BCWeatherMainViewController
+
+        if !(masterViewController.presenter is BCWeatherPresenter) {
+            XCTFail("Presenter creation failed. BCWeatherMainController presenter is nil")
+            return
+        }
+    }
+
+    func testBCWeatherNavigateToDetail() {
+        let navController = BCWeatherRouteWireFrame.createBCWeatherMainModule()
+        let masterViewController = navController.children.first as! BCWeatherMainViewController
+
+        guard let openWeather = openWeather else {
+            XCTFail("openWeather is borked")
+            return
+        }
+        masterViewController.presenter?.navigateToDetails(weather: openWeather, from: masterViewController)
+            
+        wait(for: 3)
+        if !(navController.children.last is BCWeatherDetailViewController) {
+            XCTFail("Navigation failed.")
+            return
+        }
+
+
+    }
+
+
+    // MARK: XCTest Helpers
+    func wait(for duration: TimeInterval) {
+        let waitExpectation = expectation(description: "Waiting")
+
+        let when = DispatchTime.now() + duration
+        DispatchQueue.main.asyncAfter(deadline: when) {
+            waitExpectation.fulfill()
+        }
+
+        // We use a buffer here to avoid flakiness with Timer on CI
+        waitForExpectations(timeout: duration + 0.5)
     }
 
 }
