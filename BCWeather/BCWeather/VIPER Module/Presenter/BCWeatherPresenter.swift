@@ -38,13 +38,13 @@ class BCWeatherPresenter: BCWeatherPresenterProtocol {
     ///   - classRef: a reference to the viewController on which to show the actionsheet
     func showSettingsActionSheet(from classRef: UIViewController) {
         let alert = UIAlertController(title: "", message: "Choose Unit", preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "Metric", style: .default, handler: { (_) in
+        alert.addAction(UIAlertAction(title: "Metric", style: .default, handler: { [weak self] (_) in
             UserDefaults.standard.set("metric", forKey: "unit")
-            self.triggerDataRefresh(from: classRef)
+            self?.triggerDataRefresh(from: classRef)
         }))
-        alert.addAction(UIAlertAction(title: "Imperial", style: .default, handler: { (_) in
+        alert.addAction(UIAlertAction(title: "Imperial", style: .default, handler: { [weak self] (_) in
             UserDefaults.standard.set("imperial", forKey: "unit")
-            self.triggerDataRefresh(from: classRef)
+            self?.triggerDataRefresh(from: classRef)
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (_) in
         }))

@@ -21,8 +21,8 @@ class BCWeatherDataManager: BCWeatherRemoteDataManagerInputProtocol {
     ///           London and Tokyo as per the specs.
     func retrieveWeather(for city: String) {
         DispatchQueue.global(qos: .userInitiated).async {
-            APIClient.retrieveWeather(for: city, completion: {openWeather -> Void in
-                self.remoteRequestHandler?.onOpenWeatherRetrieved(openWeather)
+            APIClient.retrieveWeather(for: city, completion: { [weak self] openWeather -> Void in
+                self?.remoteRequestHandler?.onOpenWeatherRetrieved(openWeather)
             })
         }
     }

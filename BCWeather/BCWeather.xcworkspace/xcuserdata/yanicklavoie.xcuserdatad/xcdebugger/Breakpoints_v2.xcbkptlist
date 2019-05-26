@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BCWeather/VIPER Module/View/BCWeatherMainViewController.swift"
-            timestampString = "580590999.91765"
+            timestampString = "580593751.917031"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
             landmarkName = "refreshWeatherData(_:)"
             landmarkType = "7">
          </BreakpointContent>

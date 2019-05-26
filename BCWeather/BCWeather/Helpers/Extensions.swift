@@ -17,13 +17,19 @@ extension UIFont {
 extension UIImageView {
     public func imageFromUrl(urlString: String) {
         if let url = URL(string: urlString) {
-            let request = URLRequest(url: url)
-            NSURLConnection.sendAsynchronousRequest(request, queue: OperationQueue.main) {
-                (response: URLResponse!, data: Data!, error: Error!) -> Void in
-                self.image = UIImage(data: data as Data)
+            getData(from: url) { [weak self] data, response, error in
+                guard let data = data, error == nil else { return }
+                DispatchQueue.main.async() {
+                    self?.image = UIImage(data: data)
+                }
             }
         }
     }
+
+    private func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+        URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
+    }
+
 }
 
 /// App Specific Colors & color helpers

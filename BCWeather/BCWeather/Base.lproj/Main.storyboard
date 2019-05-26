@@ -185,7 +185,7 @@
     </scenes>
     <resources>
         <image name="Cloud" width="320" height="215.5"/>
-        <image name="settings32" width="32" height="32"/>
+        <image name="settings32" width="24" height="24"/>
         <image name="wind-turbines17" width="640" height="512"/>
     </resources>
 </document>

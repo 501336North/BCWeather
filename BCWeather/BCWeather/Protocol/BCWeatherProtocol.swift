@@ -13,13 +13,9 @@ protocol BCWeatherMainViewProtocol: class {
 
     /// PRESENTER -> VIEW
     func showOpenWeatherView(with openWeather: [OpenWeather])
-
     func refreshWeather()
-    
     func showError()
-
     func showLoading()
-
     func hideLoading()
 }
 

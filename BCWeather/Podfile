@@ -6,7 +6,6 @@ use_frameworks!
 
 def reusepods
   pod 'AlamofireObjectMapper'
-  pod 'AlamofireImage'
   pod 'Swinject'
   pod 'SwiftLint'
 end
