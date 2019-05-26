@@ -49,6 +49,7 @@ protocol BCWeatherPresenterProtocol: class {
     /// VIEW -> PRESENTER
     func viewDidLoad()
     func navigateToDetails(weather: OpenWeather, from classRef: UIViewController)
+    func showSettingsActionSheet(from classRef: UIViewController) -> Void
     func retrieveWeather(for city: String)
 }
 

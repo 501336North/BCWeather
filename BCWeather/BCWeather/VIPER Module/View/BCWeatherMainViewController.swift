@@ -18,6 +18,7 @@ class BCWeatherMainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "BCWeather"
         locationManager.delegate = self
         setupTableView()
     }
@@ -35,7 +36,7 @@ class BCWeatherMainViewController: UIViewController {
         refreshControl.addTarget(self, action: #selector(refreshWeatherData(_:)), for: .valueChanged)
     }
 
-    @objc private func refreshWeatherData(_ sender: Any) {
+    @objc func refreshWeatherData(_ sender: Any) {
         var currentCity = ""
         guard let exposedLocation = locationManager.exposedLocation else {
             self.presenter?.retrieveWeather(for: currentCity)
@@ -48,6 +49,11 @@ class BCWeatherMainViewController: UIViewController {
             currentCity = currentCity.folding(options: .diacriticInsensitive, locale: .current)
             self.presenter?.retrieveWeather(for: currentCity)
         }
+    }
+
+
+    @IBAction func settingsTapped(_ sender: Any) {
+        presenter?.showSettingsActionSheet(from: self)
     }
 }
 

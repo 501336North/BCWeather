@@ -24,8 +24,12 @@ class BCWeatherMainCell: UITableViewCell {
         //TODO: find a service to return cityscapes
 //        cityScapeBGImageView.image = nil
 
-        //TODO: deal with units
-        temperatureLabel.text = String(format:"%.0f°C", openWeather.main?.temp ?? "-")
+        let unit = UserDefaults.standard.string(forKey: "unit") ?? "metric"
+        if unit == "metric" {
+            temperatureLabel.text = String(format:"%.0f°C", openWeather.main?.temp ?? "-")
+        } else {
+            temperatureLabel.text = String(format:"%.0f°F", openWeather.main?.temp ?? "-")
+        }
         cityNameLabel.text = openWeather.name
 
         guard let ico = openWeather.weather?.first?.icon else { return }

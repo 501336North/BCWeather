@@ -28,6 +28,25 @@ class BCWeatherPresenter: BCWeatherPresenterProtocol {
         wireFrame?.navigateToDetails(weather: weather, from: classRef)
     }
 
+    func showSettingsActionSheet(from classRef: UIViewController) {
+        let alert = UIAlertController(title: "", message: "Choose Unit", preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Metric", style: .default, handler: { (_) in
+            UserDefaults.standard.set("metric", forKey: "unit")
+            guard let mainViewController = classRef as? BCWeatherMainViewController else { return }
+            mainViewController.refreshWeatherData(mainViewController)
+        }))
+        alert.addAction(UIAlertAction(title: "Imperial", style: .default, handler: { (_) in
+            UserDefaults.standard.set("imperial", forKey: "unit")
+            guard let mainViewController = classRef as? BCWeatherMainViewController else { return }
+            mainViewController.refreshWeatherData(mainViewController)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (_) in
+        }))
+
+        classRef.present(alert, animated: true, completion: nil)
+
+    }
+
 }
 
 extension BCWeatherPresenter: BCWeatherInteractorOutputProtocol {

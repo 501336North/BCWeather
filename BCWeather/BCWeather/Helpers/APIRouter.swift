@@ -38,9 +38,7 @@ enum APIRouter: URLRequestConvertible {
         switch self {
         case .retrieveWeather(let city):
 
-            //TOO: handle metric or farenheit
-            let unit = "metric"
-
+            let unit = UserDefaults.standard.string(forKey: "unit") ?? "metric"
             var cityIDs = MonitoredCities.allCases
                 .map { "\($0.cityId)" }
                 .joined(separator: ",")

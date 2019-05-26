@@ -34,6 +34,9 @@ class BCWeatherRouteWireFrame: BCWeatherRouteWireFrameProtocol {
         return UIViewController()
     }
 
+    /// navigateToDetails function.  Called to navigate to the OpenWeather Details for a city.
+    /// - Params : the OpenWeather to show details for
+    /// - Params : the Controller from which to push the details view controller
     func navigateToDetails(weather: OpenWeather, from classRef: UIViewController) {
         guard let bcWeatherDetailViewController = BCWeatherRouteWireFrame.mainStoryboard.instantiateViewController(withIdentifier: "BCWeatherDetailView") as? BCWeatherDetailViewController else { return }
         bcWeatherDetailViewController.openWeather = weather
