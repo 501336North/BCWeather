@@ -27,6 +27,12 @@ class BCWeatherPresenter: BCWeatherPresenterProtocol {
         wireFrame?.navigateToDetails(weather: weather, from: classRef)
     }
 
+    func triggerDataRefresh(from classRef: UIViewController) {
+        guard let mainViewController = classRef as? BCWeatherMainViewController else { return }
+        mainViewController.showLoading()
+        mainViewController.refreshWeatherData(mainViewController)
+    }
+
     /// Show an action sheet allowing the user to switch between metric and imperial unit
     /// - parameters:
     ///   - classRef: a reference to the viewController on which to show the actionsheet
@@ -34,13 +40,11 @@ class BCWeatherPresenter: BCWeatherPresenterProtocol {
         let alert = UIAlertController(title: "", message: "Choose Unit", preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Metric", style: .default, handler: { (_) in
             UserDefaults.standard.set("metric", forKey: "unit")
-            guard let mainViewController = classRef as? BCWeatherMainViewController else { return }
-            mainViewController.refreshWeatherData(mainViewController)
+            self.triggerDataRefresh(from: classRef)
         }))
         alert.addAction(UIAlertAction(title: "Imperial", style: .default, handler: { (_) in
             UserDefaults.standard.set("imperial", forKey: "unit")
-            guard let mainViewController = classRef as? BCWeatherMainViewController else { return }
-            mainViewController.refreshWeatherData(mainViewController)
+            self.triggerDataRefresh(from: classRef)
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (_) in
         }))

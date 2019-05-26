@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28414D4C229B124F00A7F863 /* openWeatherMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 28414D4B229B124F00A7F863 /* openWeatherMock.json */; };
 		287533812298C0F90049505F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287533802298C0F90049505F /* AppDelegate.swift */; };
 		287533862298C0F90049505F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 287533842298C0F90049505F /* Main.storyboard */; };
 		287533882298C0FB0049505F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 287533872298C0FB0049505F /* Assets.xcassets */; };
@@ -19,7 +20,7 @@
 		287533B02298D6BD0049505F /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287533AF2298D6BD0049505F /* APIClient.swift */; };
 		287533B52298D92D0049505F /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287533B42298D92D0049505F /* Weather.swift */; };
 		287533B72298D96A0049505F /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287533B62298D96A0049505F /* APIRouter.swift */; };
-		287533C02298DAD10049505F /* BCWeatherWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287533BF2298DAD10049505F /* BCWeatherWireFrame.swift */; };
+		287533C02298DAD10049505F /* BCWeatherRouteWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287533BF2298DAD10049505F /* BCWeatherRouteWireFrame.swift */; };
 		287533C622996CBB0049505F /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287533C522996CBB0049505F /* Coordinates.swift */; };
 		287533C822996CD40049505F /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287533C722996CD40049505F /* Main.swift */; };
 		287533CA22996CE30049505F /* Wind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287533C922996CE30049505F /* Wind.swift */; };
@@ -58,6 +59,7 @@
 		1C329DE396BBED6F34D9EF19 /* Pods_BCWeatherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BCWeatherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CDDCF86ADAFC419C756EAA0 /* Pods-BCWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCWeather.release.xcconfig"; path = "Pods/Target Support Files/Pods-BCWeather/Pods-BCWeather.release.xcconfig"; sourceTree = "<group>"; };
 		1D09E765C0BE71D5B82A2CB5 /* Pods-BCWeatherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCWeatherTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BCWeatherTests/Pods-BCWeatherTests.debug.xcconfig"; sourceTree = "<group>"; };
+		28414D4B229B124F00A7F863 /* openWeatherMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = openWeatherMock.json; sourceTree = "<group>"; };
 		2875337D2298C0F90049505F /* BCWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BCWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		287533802298C0F90049505F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		287533852298C0F90049505F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -74,7 +76,7 @@
 		287533AF2298D6BD0049505F /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		287533B42298D92D0049505F /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		287533B62298D96A0049505F /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
-		287533BF2298DAD10049505F /* BCWeatherWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCWeatherWireFrame.swift; sourceTree = "<group>"; };
+		287533BF2298DAD10049505F /* BCWeatherRouteWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCWeatherRouteWireFrame.swift; sourceTree = "<group>"; };
 		287533C522996CBB0049505F /* Coordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinates.swift; sourceTree = "<group>"; };
 		287533C722996CD40049505F /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		287533C922996CE30049505F /* Wind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wind.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				287533D5229974AF0049505F /* city.list.json */,
+				28414D4B229B124F00A7F863 /* openWeatherMock.json */,
 			);
 			path = Closures;
 			sourceTree = "<group>";
@@ -281,7 +284,7 @@
 		287534212299E9F60049505F /* Router */ = {
 			isa = PBXGroup;
 			children = (
-				287533BF2298DAD10049505F /* BCWeatherWireFrame.swift */,
+				287533BF2298DAD10049505F /* BCWeatherRouteWireFrame.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 				287533F42299CB280049505F /* BCWeatherMainCell.xib in Resources */,
 				287533D6229974B60049505F /* city.list.json in Resources */,
 				287533882298C0FB0049505F /* Assets.xcassets in Resources */,
+				28414D4C229B124F00A7F863 /* openWeatherMock.json in Resources */,
 				287533862298C0F90049505F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -528,7 +532,7 @@
 				287533EC2299B5BE0049505F /* BCWeatherInteractor.swift in Sources */,
 				287533D222996D1F0049505F /* Sys.swift in Sources */,
 				287533C822996CD40049505F /* Main.swift in Sources */,
-				287533C02298DAD10049505F /* BCWeatherWireFrame.swift in Sources */,
+				287533C02298DAD10049505F /* BCWeatherRouteWireFrame.swift in Sources */,
 				2875341C2299E95A0049505F /* BCWeatherProtocol.swift in Sources */,
 				287533C622996CBB0049505F /* Coordinates.swift in Sources */,
 				287533B72298D96A0049505F /* APIRouter.swift in Sources */,

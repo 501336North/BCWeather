@@ -38,10 +38,12 @@ class BCWeatherMainViewController: UIViewController {
 
         guard let exposedLocation = locationManager.exposedLocation else {
             let currentCity = UserDefaults.standard.string(forKey: "currentCity") ?? ""
+            showLoading()
             self.presenter?.retrieveWeather(for: currentCity)
             return
         }
 
+        showLoading()
         locationManager.getPlace(for: exposedLocation) { placemark in
             guard let placemark = placemark else { return }
             var city = placemark.locality ?? ""
@@ -72,7 +74,7 @@ extension BCWeatherMainViewController:  BCWeatherMainViewProtocol {
     }
 
     func refreshWeather() {
-        refreshWeatherData(self)
+        getCurrentCity()
     }
 
     func showError() {
