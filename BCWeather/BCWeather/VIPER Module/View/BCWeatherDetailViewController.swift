@@ -21,17 +21,13 @@ class BCWeatherDetailViewController: UIViewController {
         refreshOpenWeatherView()
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-
 }
 
 extension BCWeatherDetailViewController:  BCWeatherDetailViewProtocol {
     func refreshOpenWeatherView() {
         title = openWeather?.name
         let unit = UserDefaults.standard.string(forKey: "unit") ?? "metric"
-        let unitString = unit == "metric" ? "KMH": "MPH"
+        let unitString = unit == "metric" ? "KMH" : "MPH"
         windSpeedLabel.text = String(format:"%.1f", openWeather?.wind?.speed ?? 0) + unitString
         windDirectionLabel.text = "\(openWeather?.wind?.direction ?? 0)°"
         cloudCoveragePctgLabel.text = String(format:"%.0f", openWeather?.clouds?.all ?? 0) + "%"

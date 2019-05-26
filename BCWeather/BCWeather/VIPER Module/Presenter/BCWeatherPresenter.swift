@@ -12,12 +12,11 @@ class BCWeatherPresenter: BCWeatherPresenterProtocol {
     weak var view: BCWeatherMainViewProtocol?
     var interactor: BCWeatherInteractorInputProtocol?
     var wireFrame: BCWeatherRouteWireFrameProtocol?
-
+    
     func viewDidLoad() {
         view?.showLoading()
-        
-        //TODO: ask for perms and translate loc to city to pass as param
-        interactor?.retrieveWeather(for: "")
+        let currentCity = UserDefaults.standard.string(forKey: "currentCity") ?? ""
+        retrieveWeather(for: currentCity)
     }
 
     func retrieveWeather(for city: String) {
@@ -28,6 +27,9 @@ class BCWeatherPresenter: BCWeatherPresenterProtocol {
         wireFrame?.navigateToDetails(weather: weather, from: classRef)
     }
 
+    /// Show an action sheet allowing the user to switch between metric and imperial unit
+    /// - parameters:
+    ///   - classRef: a reference to the viewController on which to show the actionsheet
     func showSettingsActionSheet(from classRef: UIViewController) {
         let alert = UIAlertController(title: "", message: "Choose Unit", preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Metric", style: .default, handler: { (_) in

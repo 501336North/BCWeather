@@ -35,13 +35,16 @@ extension LocationManager: CLLocationManagerDelegate {
                          didChangeAuthorization status: CLAuthorizationStatus) {
 
         switch status {
-        case .notDetermined         : print("notDetermined")        // location permission not asked for yet
+        case .notDetermined         :
+            print("notDetermined")
         case .authorizedWhenInUse   :
             delegate?.refreshWeather()
         case .authorizedAlways      :
             delegate?.refreshWeather()
-        case .restricted            : print("restricted")           // TODO: handle
-        case .denied                : print("denied")               // TODO: handle
+        case .restricted            :
+            print("restricted")
+        case .denied                :
+            print("denied")
         @unknown default:
             print("denied")
         }
@@ -51,7 +54,10 @@ extension LocationManager: CLLocationManagerDelegate {
 // MARK: - Get Placemark
 extension LocationManager {
 
-
+    /// Retrieve Place marks around a geoloc point
+    /// - parameters:
+    ///   - location: geoloc point
+    ///   - completion: closure to be executed on completion
     func getPlace(for location: CLLocation,
                   completion: @escaping (CLPlacemark?) -> Void) {
 

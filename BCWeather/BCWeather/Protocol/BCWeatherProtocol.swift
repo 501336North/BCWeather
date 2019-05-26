@@ -78,10 +78,6 @@ protocol BCWeatherDetailPresenterProtocol: class {
     var view: BCWeatherDetailViewProtocol? { get set }
 }
 
-protocol BCWeatherDetailWireFrameProtocol: class {
-    static func createBCWeatherDetailModule() -> UIViewController
-}
-
 
 
 

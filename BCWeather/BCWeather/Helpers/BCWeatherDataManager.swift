@@ -14,10 +14,17 @@ class BCWeatherDataManager: BCWeatherRemoteDataManagerInputProtocol {
     var remoteRequestHandler: BCWeatherRemoteDataManagerOutputProtocol?
 
     /// function to retrieve the weather data from the backend
+    ///
+    /// - parameters:
+    ///   - city: the city for which to retrieve the weather.  It represents the
+    ///           current location as we already know that we need to pull data for
+    ///           London and Tokyo as per the specs.
     func retrieveWeather(for city: String) {
-        APIClient.retrieveWeather(for: city, completion: {openWeather -> Void in
-            self.remoteRequestHandler?.onOpenWeatherRetrieved(openWeather)
-        })
+        DispatchQueue.global(qos: .userInitiated).async {
+            APIClient.retrieveWeather(for: city, completion: {openWeather -> Void in
+                self.remoteRequestHandler?.onOpenWeatherRetrieved(openWeather)
+            })
+        }
     }
 
 }

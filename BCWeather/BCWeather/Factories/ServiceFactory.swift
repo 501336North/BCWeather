@@ -9,6 +9,13 @@
 import Foundation
 
 enum ServiceFactory {
+
+    /// resolve
+    ///
+    /// - parameters:
+    ///   - serviceType: the type of service to be resolved
+    /// - returns:
+    ///   - Service: the fully resolved service
     static func resolve<Service>(serviceType: Service.Type) -> Service? {
         return Bootstrapper.getContainer().resolve(serviceType)
     }

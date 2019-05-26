@@ -8,6 +8,7 @@
 
 import Alamofire
 
+/// MonitoredCities : The requirements asked for London and Tokyo to always be shown
 enum MonitoredCities : CaseIterable {
     case London
     case Tokyo
@@ -64,8 +65,9 @@ enum APIRouter: URLRequestConvertible {
 
     func asURLRequest() throws -> URLRequest {
         let urlString = APIRouter.baseUrl + path
-        //TODO: get rid of this forced unwrap
-        let url = URL(string: urlString)!
+        guard let url = URL(string: urlString) else {
+            fatalError("Unconstructable URL: \(urlString)")
+        }
         var urlRequest = URLRequest(url: url)
 
         urlRequest.httpMethod = method.rawValue
@@ -76,7 +78,7 @@ enum APIRouter: URLRequestConvertible {
 /// function to key Meet API Key in the info.plist file
 extension APIRouter {
     static var apiKey: String {
-        return Bundle.main.object(forInfoDictionaryKey: "openWeatherAPIKey") as! String
+        return Bundle.main.object(forInfoDictionaryKey: "openWeatherAPIKey") as? String ?? ""
     }
 }
 

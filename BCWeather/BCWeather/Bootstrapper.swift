@@ -20,6 +20,10 @@ struct Bootstrapper {
             } .inObjectScope(.container)
     }
 
+    /// getContainer
+    ///
+    /// - returns:
+    ///   - container: a shared instance of the container.
     static func getContainer() -> Container {
         return Bootstrapper.sharedInstance.container
     }

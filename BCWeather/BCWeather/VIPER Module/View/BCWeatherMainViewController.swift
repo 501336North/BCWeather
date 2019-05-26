@@ -11,22 +11,20 @@ import UIKit
 class BCWeatherMainViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    var openWeatherItems: [OpenWeather] = []
-    var presenter: BCWeatherPresenterProtocol?
-    var locationManager = LocationManager()
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    private var openWeatherItems: [OpenWeather] = []
+    private var locationManager = LocationManager()
     private let refreshControl = UIRefreshControl()
+
+    var presenter: BCWeatherPresenterProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "BCWeather"
+        getCurrentCity()
         locationManager.delegate = self
         setupTableView()
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        //TODO: We probably need to move that elsewhere
-        refreshWeatherData(self)
+        presenter?.viewDidLoad()
     }
 
     private func setupTableView() {
@@ -36,21 +34,28 @@ class BCWeatherMainViewController: UIViewController {
         refreshControl.addTarget(self, action: #selector(refreshWeatherData(_:)), for: .valueChanged)
     }
 
-    @objc func refreshWeatherData(_ sender: Any) {
-        var currentCity = ""
+    private func getCurrentCity() {
+
         guard let exposedLocation = locationManager.exposedLocation else {
+            let currentCity = UserDefaults.standard.string(forKey: "currentCity") ?? ""
             self.presenter?.retrieveWeather(for: currentCity)
             return
         }
 
         locationManager.getPlace(for: exposedLocation) { placemark in
             guard let placemark = placemark else { return }
-            currentCity = placemark.locality ?? ""
-            currentCity = currentCity.folding(options: .diacriticInsensitive, locale: .current)
-            self.presenter?.retrieveWeather(for: currentCity)
+            var city = placemark.locality ?? ""
+            city = city.folding(options: .diacriticInsensitive, locale: .current)
+            UserDefaults.standard.set(city, forKey: "currentCity")
+            self.refreshWeatherData(self)
         }
+
     }
 
+    @objc func refreshWeatherData(_ sender: Any) {
+        let currentCity = UserDefaults.standard.string(forKey: "currentCity") ?? ""
+        self.presenter?.retrieveWeather(for: currentCity)
+    }
 
     @IBAction func settingsTapped(_ sender: Any) {
         presenter?.showSettingsActionSheet(from: self)
@@ -74,9 +79,11 @@ extension BCWeatherMainViewController:  BCWeatherMainViewProtocol {
     }
 
     func showLoading() {
+        spinner.startAnimating()
     }
 
     func hideLoading() {
+        spinner.stopAnimating()
     }
 }
 
@@ -87,10 +94,10 @@ extension BCWeatherMainViewController: UITableViewDelegate, UITableViewDataSourc
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MainWeatherCell", for: indexPath) as! BCWeatherMainCell
-        cell.configure(openWeather: openWeatherItems[indexPath.row])
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MainWeatherCell", for: indexPath) as? BCWeatherMainCell
+        cell?.configure(openWeather: openWeatherItems[indexPath.row])
 
-        return cell
+        return cell ?? UITableViewCell(style: .default, reuseIdentifier: "MainWeatherCell")
     }
 
     func tableView(_: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
