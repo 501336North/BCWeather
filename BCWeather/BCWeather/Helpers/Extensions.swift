@@ -14,6 +14,18 @@ extension UIFont {
 }
 
 /// App Specific Image helpers
+extension UIImageView {
+    public func imageFromUrl(urlString: String) {
+        if let url = URL(string: urlString) {
+            let request = URLRequest(url: url)
+            NSURLConnection.sendAsynchronousRequest(request, queue: OperationQueue.main) {
+                (response: URLResponse!, data: Data!, error: Error!) -> Void in
+                self.image = UIImage(data: data as Data)
+            }
+        }
+    }
+}
+
 extension UIImage {
 
     func maskWithColor(color: UIColor) -> UIImage? {
@@ -44,7 +56,7 @@ extension UIImage {
 
 /// App Specific Colors & color helpers
 extension UIColor {
-    static let BCWAccent = UIColor(red: 237/255.0, green: 28/255.0, blue: 64/255.0, alpha: 1.0)
+    static let BCWAccent = UIColor(red: 23/255.0, green: 28/255.0, blue: 234/255.0, alpha: 1.0)
     static let BCWAccentDark = UIColor.BCWAccent.darker(by: 40)
     static let BCWBlack = UIColor(white: 14.0 / 255.0, alpha: 1.0)
     static let BCWBlack45 = UIColor(white: 14.0 / 255.0, alpha: 0.45)

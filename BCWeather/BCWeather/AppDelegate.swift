@@ -50,11 +50,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //TODO: This should be moved elsewher
     /// Setup default UINavigation Appearance.
     func configAppearance() {
-        UINavigationBar.appearance().tintColor = UIColor.BCWAccentDark
-        UINavigationBar.appearance().barTintColor = UIColor.BCWAccent
+        UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
+        UINavigationBar.appearance().tintColor = UIColor.BCWWhite
         UINavigationBar.appearance().clipsToBounds = false
         UINavigationBar.appearance().isTranslucent = false
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.font : UIFont.BCWFontRegular17, NSAttributedString.Key.foregroundColor : UIColor.BCWAccentDark as Any]
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.font : UIFont.BCWFontRegular17, NSAttributedString.Key.foregroundColor : UIColor.BCWWhite as Any]
     }
 
 }

@@ -30,8 +30,10 @@ class BCWeatherDetailViewController: UIViewController {
 extension BCWeatherDetailViewController:  BCWeatherDetailViewProtocol {
     func refreshOpenWeatherView() {
         title = openWeather?.name
-        windSpeedLabel.text = String(format:"%.1f", openWeather?.wind?.speed ?? 0)
+        let unit = UserDefaults.standard.string(forKey: "unit") ?? "metric"
+        let unitString = unit == "metric" ? "KMH": "MPH"
+        windSpeedLabel.text = String(format:"%.1f", openWeather?.wind?.speed ?? 0) + unitString
         windDirectionLabel.text = "\(openWeather?.wind?.direction ?? 0)°"
-        cloudCoveragePctgLabel.text = "\(openWeather?.clouds?.all ?? 0)%"
+        cloudCoveragePctgLabel.text = String(format:"%.0f", openWeather?.clouds?.all ?? 0) + "%"
     }
 }
