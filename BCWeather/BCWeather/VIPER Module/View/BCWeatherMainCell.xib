@@ -27,19 +27,29 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="23°C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jcy-Wr-9Xj">
-                    <rect key="frame" x="156" y="18" width="238" height="128"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="faW-mh-ymF">
+                    <rect key="frame" x="20" y="32" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="0fY-wS-wMC"/>
+                        <constraint firstAttribute="width" constant="100" id="Aw3-Dl-vFu"/>
+                        <constraint firstAttribute="width" secondItem="faW-mh-ymF" secondAttribute="height" multiplier="1:1" id="ita-pm-Xbg"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23°C" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="jcy-Wr-9Xj">
+                    <rect key="frame" x="156" y="23" width="238" height="119"/>
                     <fontDescription key="fontDescription" type="system" pointSize="100"/>
                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="faW-mh-ymF">
-                    <rect key="frame" x="20" y="32" width="100" height="100"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="jcy-Wr-9Xj" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-7.5" id="Ijb-aO-yMz"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="jcy-Wr-9Xj" secondAttribute="trailing" constant="20" id="N7u-e7-7SS"/>
+                <constraint firstItem="jcy-Wr-9Xj" firstAttribute="leading" secondItem="faW-mh-ymF" secondAttribute="trailing" constant="36" id="cfS-qw-uqh"/>
+                <constraint firstItem="faW-mh-ymF" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="fOL-ib-b9v"/>
+                <constraint firstItem="faW-mh-ymF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="32" id="g2v-Bw-HHl"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>

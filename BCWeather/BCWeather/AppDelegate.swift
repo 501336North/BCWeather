@@ -25,7 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     window.rootViewController = bcweatherMain
                     window.makeKeyAndVisible()
                 }
-                self.configAppearance()
             }
         }
 
@@ -45,16 +44,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
-    }
-
-    //TODO: This should be moved elsewher
-    /// Setup default UINavigation Appearance.
-    func configAppearance() {
-        UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
-        UINavigationBar.appearance().tintColor = UIColor.BCWWhite
-        UINavigationBar.appearance().clipsToBounds = false
-        UINavigationBar.appearance().isTranslucent = false
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.font : UIFont.BCWFontRegular17, NSAttributedString.Key.foregroundColor : UIColor.BCWWhite as Any]
     }
 
 }

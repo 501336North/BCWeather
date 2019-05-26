@@ -29,6 +29,7 @@ final class AppStartupService : AppStartupServiceProtocol {
     }
 
     func start(_ closure: (() -> Void)?) {
+        configAppearance()
         if ProcessInfo.processInfo.environment["DISABLE_ANIMATIONS"] == "1" {
             UIView.setAnimationsEnabled(false)
         }
@@ -36,6 +37,16 @@ final class AppStartupService : AppStartupServiceProtocol {
         UserDefaults.standard.set(kFirstLaunchKeyKey, forKey: kFirstLaunchKeyKey)
         closure?()
     }
+
+    /// Setup default UINavigation Appearance.
+    private func configAppearance() {
+        UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
+        UINavigationBar.appearance().tintColor = UIColor.BCWWhite
+        UINavigationBar.appearance().clipsToBounds = false
+        UINavigationBar.appearance().isTranslucent = false
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.font : UIFont.BCWFontRegular17, NSAttributedString.Key.foregroundColor : UIColor.BCWWhite as Any]
+    }
+
 }
 
 
