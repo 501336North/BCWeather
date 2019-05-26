@@ -2,11 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "blue-clouded-skies-partial320.jpg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Cloud.jpg",
+      "filename" : "blue-clouded-skies-partial_640v640.jpg",
       "scale" : "2x"
     },
     {

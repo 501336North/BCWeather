@@ -13,13 +13,9 @@ protocol BCWeatherMainViewProtocol: class {
 
     /// PRESENTER -> VIEW
     func showOpenWeatherView(with openWeather: [OpenWeather])
-
     func refreshWeather()
-    
     func showError()
-
     func showLoading()
-
     func hideLoading()
 }
 
@@ -76,10 +72,6 @@ protocol BCWeatherDetailViewProtocol: class {
 
 protocol BCWeatherDetailPresenterProtocol: class {
     var view: BCWeatherDetailViewProtocol? { get set }
-}
-
-protocol BCWeatherDetailWireFrameProtocol: class {
-    static func createBCWeatherDetailModule() -> UIViewController
 }
 
 

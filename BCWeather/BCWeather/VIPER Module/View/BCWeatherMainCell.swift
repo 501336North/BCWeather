@@ -7,11 +7,9 @@
 //
 
 import UIKit
-import AlamofireImage
 
 class BCWeatherMainCell: UITableViewCell {
 
-    @IBOutlet weak var cityScapeBGImageView: UIImageView!
     @IBOutlet weak var weatherIconImageView: UIImageView!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var cityNameLabel: UILabel!
@@ -21,9 +19,6 @@ class BCWeatherMainCell: UITableViewCell {
     }
 
     func configure(openWeather: OpenWeather) {
-        //TODO: find a service to return cityscapes
-//        cityScapeBGImageView.image = nil
-
         let unit = UserDefaults.standard.string(forKey: "unit") ?? "metric"
         if unit == "metric" {
             temperatureLabel.text = String(format:"%.0f°C", openWeather.main?.temp ?? "-")
@@ -38,7 +33,6 @@ class BCWeatherMainCell: UITableViewCell {
     }
 
     override func prepareForReuse() {
-        cityScapeBGImageView.image = nil
         weatherIconImageView.image = nil
         temperatureLabel.text = ""
         cityNameLabel.text = ""
